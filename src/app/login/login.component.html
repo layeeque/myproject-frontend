@@ -1,0 +1,35 @@
+
+<div class="container" >
+        <h3 style="text-align: center">{{message}}</h3>
+  <div class="card card-container">
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+      <p id="profile-name" class="profile-name-card"></p>
+    
+          <span id="reauth-email" class="reauth-email"></span>
+          <input type="text" id="inputEmail" class="form-control" placeholder="Email address"  name="ename" [(ngModel)]="ename" [ngModelOptions]="{standalone: true}" autofocus>
+  
+          <input type="password" id="inputPassword" class="form-control" [(ngModel)]="password" name="password" placeholder="Password" [ngModelOptions]="{standalone: true}" >
+    
+          <div id="remember" class="checkbox">
+              <label>
+                  <input type="checkbox" value="remember-me"> Remember me
+              </label>
+          </div>
+    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="signIn()">Sign in</button>
+             
+      <button class="loginBtn loginBtn--google" (click)="socialSignIn('google')">Google</button><br/><br/>
+      <a href="#" class="forgot-password">
+          Forgot the password?
+      </a>
+
+      <a href="/registration" class="forgot-password">New Registration</a>
+  </div>
+  
+</div>
+
+<div *ngIf="afservice.user | async as user">
+    <h3>hello {{user.displayName}}</h3>
+    <img [src]="user.photoURL">
+    <button (click)="afservice.logoutWithGoogle()">logout</button>
+
+</div>

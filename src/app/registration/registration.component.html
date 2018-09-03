@@ -1,0 +1,25 @@
+
+<div class="container" style="width:40%"><div>{{msg}} <a [routerLink]="['/dashboard']">Click here to go to Dashboard</a></div>
+  <div class="card card-container b_middle">
+      <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+      <img id="profile-img" style="border-radius:50%;height:100px" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+      <p id="profile-name" class="profile-name-card"></p>
+      <!-- <form class="form-signin"> -->
+          <span id="reauth-email" class="reauth-email"></span>
+          <!-- <input type="text" id="inputid" class="form-control" placeholder="Id"  name="id" [(ngModel)]="id" [ngModelOptions]="{standalone: true}" autofocus> -->
+          <input type="text" id="inputEmail" class="form-control" placeholder="Email address"  name="ename" [(ngModel)]="ename" [ngModelOptions]="{standalone: true}" autofocus>
+  
+          <input type="password" id="inputPassword" class="form-control" [(ngModel)]="password" name="password" placeholder="Password" [ngModelOptions]="{standalone: true}" >
+          <!-- <input type="password" id="inputPassword" class="form-control" [(ngModel)]="password" name="password" placeholder="Password" [ngModelOptions]="{standalone: true}" > -->
+        
+          <div id="remember" class="checkbox">
+              <label>
+                  <input type="checkbox" value="remember-me"> Remember me
+              </label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="register()">Sign in</button>
+      <!-- </form> -->
+      <!-- /form -->
+
+  </div><!-- /card-container -->
+</div><!-- /container -->
