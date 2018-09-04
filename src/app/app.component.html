@@ -3,12 +3,7 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <div *ngIf="afservice.user | async as user">
-    <h3>hello {{user.displayName}}</h3>
-    <img [src]="user.photoURL">
-    <button (click)="afservice.logoutWithGoogle()">logout</button>
-
-</div>
+ 
  </div>
 
 
