@@ -16,6 +16,7 @@ import { AngularWebStorageModule } from 'angular-web-storage';
 import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from "angular-6-social-login";
 import { AddFormComponent } from './add-form/add-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 // import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 // import { TokenInterceptService } from './services/token-intercept.service';
 
@@ -49,7 +50,8 @@ export function getAuthServiceConfigs() {
     NgxSpinnerModule,
     SocialLoginModule,
     AngularWebStorageModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
   ],
   providers: [ValidationService, AuthGuard, {
     provide: AuthServiceConfig,
