@@ -1,0 +1,14 @@
+<button (click)="openNav()">open</button>
+<div>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <div>
+    <img style="border-radius: 50%; height: 35%;margin: 10% 20% 10% 30%;" src={{image}}>  </div>
+  <div style="margin: 10% 30% 10% 20%; text-align: center;">{{name}}</div>
+
+  <a>Change Password</a>
+  
+</div>
+<div style="position:sticky"><button (click)="closeNav()">close</button></div>
+</div>
+

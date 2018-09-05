@@ -13,6 +13,7 @@ import { LocalStorageService, SessionStorageService, LocalStorage, SessionStorag
   providers: [LoginService]
 })
 export class LoginComponent implements OnInit{
+  shouldRun = false
   tem: Object = {}
   ename: string;
   password: string;
@@ -39,6 +40,7 @@ ngOnInit(){
         if (result.success == 1) {
           console.log("the returned value is "+JSON.stringify(result))
           localStorage.setItem("name",result.data[0].name)
+          localStorage.setItem("email",result.data[0].email)
 
           localStorage.setItem("token", result.token)
           this.session.set("socialLogin",false)
@@ -68,6 +70,7 @@ ngOnInit(){
               localStorage.setItem("token", result.token)
               localStorage.setItem("name",userData.name)
               localStorage.setItem("photo", userData.image)
+              localStorage.setItem("email",userData.email)
              
               this.router.navigate(['dashboard']);          
               this.session.set("socialLogin",true)

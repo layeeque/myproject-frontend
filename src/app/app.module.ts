@@ -16,16 +16,21 @@ import { AngularWebStorageModule } from 'angular-web-storage';
 import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from "angular-6-social-login";
 import { AddFormComponent } from './add-form/add-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from "./material.Module";
 
-// import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-// import { TokenInterceptService } from './services/token-intercept.service';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { SidenavComponent } from './sidenav/sidenav.component';
+
+
+
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig([
     {
       id: GoogleLoginProvider.PROVIDER_ID,
       
-      // provider: new GoogleLoginProvider("1092754136909-250693fpthv3bfdi9kot0mmln664icud.apps.googleusercontent.com")
+       //provider: new GoogleLoginProvider("1092754136909-250693fpthv3bfdi9kot0mmln664icud.apps.googleusercontent.com")
       provider: new GoogleLoginProvider("719240973538-i2kqdok4jkaos0kqmf5ms6rvr60s9gen.apps.googleusercontent.com")
     }
   ]);
@@ -40,7 +45,11 @@ export function getAuthServiceConfigs() {
     RegistrationComponent,
     DashBoardtableComponent,
     FormComponent,
-    AddFormComponent
+    AddFormComponent,
+    SidenavComponent,
+    
+  
+   
   ],
   imports: [
     BrowserModule,
@@ -51,6 +60,13 @@ export function getAuthServiceConfigs() {
     SocialLoginModule,
     AngularWebStorageModule,
     BrowserAnimationsModule,
+    MaterialModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
 
   ],
   providers: [ValidationService, AuthGuard, {
