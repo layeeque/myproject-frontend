@@ -41,7 +41,7 @@ ngOnInit(){
  
   editfunction()
   {
-    this._FormserviceService.update(localStorage.getItem("_id"),this.newfname,this.newlname,this.newaddress,this.newstate,this.newmobile).subscribe(data =>{
+    this._FormserviceService.update(localStorage.getItem("_id"),this.newfname,this.newlname,this.newaddress.toString().slice(0, 15),this.newstate.toString().slice(0, 15),this.newmobile).subscribe(data =>{
       console.log("data is "+ data)
      
       this.router.navigate(['dashboard']);
