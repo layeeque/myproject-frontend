@@ -17,6 +17,7 @@ export class FormComponent implements OnInit  {
   newaddress;
   newstate;
   newmobile;
+  myDatepicker1;
   _id;
   edited:any;
   edit:string;

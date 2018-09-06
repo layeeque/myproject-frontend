@@ -15,14 +15,14 @@ import { fadeAnimation } from '../animation';
 
 export class DashboardComponent implements OnInit {
 image:any;
-name:any;
+email:any;
 dashboard;
 
 
   ngOnInit() {
     console.log('in');
     this.image=localStorage.getItem("photo");
-    this.name=localStorage.getItem("name");
+    this.email=localStorage.getItem("email");
     // this.router.events.subscribe((val:any) => {
     //   if(val.url === "/dashboard"){ console.log("I am in dashboard");this.dashboard=false}
     //   if(val.url === "/dashboard/addNewItem"){ console.log("I am in add");this.dashboard=true}

@@ -7,6 +7,7 @@ import { RegistrationComponent } from "./registration/registration.component";
 import { FormComponent } from "./form/form.component";
 import { DashBoardtableComponent } from "./dash-boardtable/dash-boardtable.component";
 import { AddFormComponent } from "./add-form/add-form.component";
+import { ForgetpasswordComponent } from "./forgetpassword/forgetpassword.component";
 
 import { AuthGuard } from "./auth.guard";
 
@@ -15,6 +16,7 @@ const routes = [
     { path: '', redirectTo: "/login", pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
     { path: 'registration', component: RegistrationComponent },
+    { path: 'forgetPassword', component: ForgetpasswordComponent },
     {
         path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]
         ,

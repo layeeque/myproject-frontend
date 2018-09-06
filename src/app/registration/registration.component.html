@@ -12,17 +12,18 @@
             <!-- <form class="form-signin"> -->
             <!-- <span id="reauth-email" class="reauth-email"></span> -->
             <!-- <input type="text" id="inputid" class="form-control" placeholder="Id"  name="id" [(ngModel)]="id" [ngModelOptions]="{standalone: true}" autofocus> -->
-            <input type="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" id="inputEmail" class="form-control" placeholder="Email address" name="ename" [(ngModel)]="ename" [ngModelOptions]="{standalone: true}" required >
+            <input type="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" id="inputEmail" class="form-control" placeholder="Email address" name="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required ><br/>
 
-            <input type="password" id="inputPassword" class="form-control" [(ngModel)]="password" name="password" placeholder="Password" [ngModelOptions]="{standalone: true}" required>
-            <!-- <input type="password" id="inputPassword" class="form-control" [(ngModel)]="password" name="password" placeholder="Password" [ngModelOptions]="{standalone: true}" > -->
+            <input type="password" id="inputPassword" class="form-control" [(ngModel)]="password" name="password" placeholder="Password" [ngModelOptions]="{standalone: true}" required><br/>
+            <input type="password" id="inputPassword" class="form-control" [(ngModel)]="cpassword" name="cpassword" placeholder="Confirm Password" [ngModelOptions]="{standalone: true}" required><br/>
+
 
             <div id="remember" class="checkbox">
                 <label>
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="register()" [disabled]="(!!ename == false ) || (!!password == false)">Sign in</button>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="register()" [disabled]="(!!email == false ) || (!!password == false) ||(!!cpassword == false) ||(password != cpassword)">Register</button>
             <!-- </form> -->
             <!-- /form -->
         </form>

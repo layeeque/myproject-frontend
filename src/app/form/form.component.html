@@ -7,31 +7,45 @@
     <div>
       
      
-      <h4 >Edit Your Details</h4>
+      <h4 style="text-align: center">Edit Your Details</h4>
     </div>
     <div>
       <div class="form-group">
-        First Name :
+        Task Name :
         <input class="form-control " type="text" [(ngModel)]="newfname">
       </div>
       <div class="form-group">
 
-        Last Name
+        Assignee
         <input class="form-control " type="text" [(ngModel)]="newlname">
       </div>
       <div class="form-group">
 
-        Address :
-        <input class="form-control " type="text" [(ngModel)]="newaddress">
+        Assign - Date :
+        <!-- <input class="form-control " type="text" [(ngModel)]="newaddress"> -->
+        <div class="form-control " style="padding-bottom: 10%">
+          <mat-form-field>
+            <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="newaddress">
+            <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker></mat-datepicker>
+          </mat-form-field>
+        </div>
       </div>
       <div class="form-group">
 
-        State :
-        <input class="form-control " type="text" [(ngModel)]="newstate">
+        Completion - Date :
+        <!-- <input class="form-control " type="text" [(ngModel)]="newaddress"> -->
+        <div class="form-control " style="padding-bottom: 10%">
+          <mat-form-field>
+            <input matInput [matDatepicker]="myDatepicker1" [(ngModel)]="newstate">
+            <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker1></mat-datepicker>
+          </mat-form-field>
+        </div>
       </div>
       <div class="form-group">
 
-        Mobile :
+        Task Details :
         <input class="form-control " type="text" [(ngModel)]="newmobile">
       </div>
 
@@ -40,7 +54,7 @@
   
     <div >
       <button type="button" class="btn btn-warning btn-lg" style="width: 100%;" (click)="editfunction()">
-        <span  class="glyphicon glyphicon-ok-sign">Confirm to Edit</span>
+        <span >Click to Update the Task</span>
       </button>
     </div>
 

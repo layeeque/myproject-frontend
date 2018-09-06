@@ -20,6 +20,7 @@ export class AddFormComponent implements OnInit {
   }
 
   add(){
+    console.log("******* "+this.newaddress,this.newstate )
     
     this._AddformserviceService.add(this.newfname,this.newlname,this.newaddress,this.newstate,this.newmobile).subscribe(data =>{
       console.log("data is "+ data)

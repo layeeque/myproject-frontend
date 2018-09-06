@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class RegistrationComponent implements OnInit {
 
   constructor(private reg : RegistrationService,private router: Router) { }
-  ename:string;
+  email:string;
   password:string;
   id:string;
   msg:string="";
@@ -20,7 +20,7 @@ export class RegistrationComponent implements OnInit {
   }
   register()
   {
-    this.reg.registerUser(this.id,this.ename,this.password).subscribe(
+    this.reg.registerUser(this.email,this.password).subscribe(
     
       (res) => { 
         this.msg=res.message;

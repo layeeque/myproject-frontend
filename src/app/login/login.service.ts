@@ -18,7 +18,7 @@ export class LoginService {
   validateUser(ename: string, password: string) {
 
     // return this.http.post("http://localhost:5000/login", { "name": ename,"password": password }, {})
-    return this.http.post("https://mytestapp128798.herokuapp.com/login", { "name": ename,"password": password }, {})
+    return this.http.post("https://mytestapp128798.herokuapp.com/login", { "email": ename,"password": password }, {})
 
       .pipe(map(res => res.json()));
   }

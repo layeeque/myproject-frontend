@@ -9,6 +9,6 @@ import { fadeAnimation } from './animation';
   animations: [fadeAnimation] 
 })
 export class AppComponent {
-  title = 'WORLD';
+  title = 'TODO App';
   constructor(private afservice:ValidationService){}
 }

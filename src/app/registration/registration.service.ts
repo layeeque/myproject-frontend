@@ -14,11 +14,11 @@ export class RegistrationService {
     this.http = _http;
   }
   
-  registerUser(id:string,ename:string,password:string) {
+  registerUser(email:string,password:string) {
     console.log("about to hit the sign api")
  
     //return this.http.post("http://localhost:5000/signUp", {"empId" :id,"name":ename,"password" : password}, {})
-    return this.http.post("https://mytestapp128798.herokuapp.com/signUp", {"empId" :id,"name":ename,"password" : password}, {})
+    return this.http.post("https://mytestapp128798.herokuapp.com/signUp", {"email":email,"password" : password}, {})
 
     .pipe(map(res => res.json()));
 

@@ -37,9 +37,10 @@ ngOnInit(){
 
     var result = this._loginService.validateUser(this.ename, this.password).subscribe(
       result => {
+        console.log("@@ "+JSON.stringify(result))
         if (result.success == 1) {
           console.log("the returned value is "+JSON.stringify(result))
-          localStorage.setItem("name",result.data[0].name)
+          // localStorage.setItem("name",result.data[0].name)
           localStorage.setItem("email",result.data[0].email)
 
           localStorage.setItem("token", result.token)
