@@ -23,7 +23,7 @@
       <!-- <input class="form-control " type="text" [(ngModel)]="newaddress"> -->
       <div class="form-control " style="padding-bottom: 10%">
         <mat-form-field>
-          <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="newaddress">
+          <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="newaddress" ng-model-options="{timezone: 'utc'}">
           <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
           <mat-datepicker #myDatepicker></mat-datepicker>
         </mat-form-field>
@@ -37,7 +37,7 @@
       <!-- <input class="form-control " type="text" [(ngModel)]="newstate"> -->
       <div class="form-control " style="padding-bottom: 10%">
         <mat-form-field>
-          <input matInput [matDatepicker]="myDatepicker1" [(ngModel)]="newstate">
+          <input matInput [matDatepicker]="myDatepicker1" [(ngModel)]="newstate" ng-model-options="{timezone: 'utc'}">
           <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
           <mat-datepicker #myDatepicker1></mat-datepicker>
         </mat-form-field>

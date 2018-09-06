@@ -9,22 +9,22 @@ import { Router } from '@angular/router';
   providers:[AddformserviceService]
 })
 export class AddFormComponent implements OnInit {
-  newfname;
-  newlname;
-  newaddress;
-  newstate;
-  newmobile;
+  newfname:String;
+  newlname:String;
+  newaddress:string;
+  newstate:string;
+  newmobile:String;
   constructor(private _AddformserviceService:AddformserviceService,private router:Router) { }
 
   ngOnInit() {
   }
 
   add(){
-    console.log("******* "+this.newaddress,this.newstate )
     
-    this._AddformserviceService.add(this.newfname,this.newlname,this.newaddress,this.newstate,this.newmobile).subscribe(data =>{
+    
+    this._AddformserviceService.add(this.newfname,this.newlname,this.newaddress.toString().slice(0, 15),this.newstate.toString().slice(0, 15),this.newmobile).subscribe(data =>{
       console.log("data is "+ data)
-     
+    
       this.router.navigate(['dashboard']);
     })
   }

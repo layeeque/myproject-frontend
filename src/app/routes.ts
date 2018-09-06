@@ -8,7 +8,6 @@ import { FormComponent } from "./form/form.component";
 import { DashBoardtableComponent } from "./dash-boardtable/dash-boardtable.component";
 import { AddFormComponent } from "./add-form/add-form.component";
 import { ForgetpasswordComponent } from "./forgetpassword/forgetpassword.component";
-
 import { AuthGuard } from "./auth.guard";
 
 
