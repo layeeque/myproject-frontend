@@ -10,7 +10,7 @@ export class ForgetPassserviceService {
   changePassword(email: String) {
     console.log("in service ")
 
-    // return this.http.post("http://localhost:5000/login", { "name": ename,"password": password }, {})
+  
    return this.http.post("https://mytestapp128798.herokuapp.com/changePassword", { "email": email }, {})
    //return this.http.post("http://localhost:5000/changePassword", { "email": email }, {})
 
