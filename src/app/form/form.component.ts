@@ -19,6 +19,7 @@ export class FormComponent implements OnInit  {
   newmobile;
   myDatepicker1;
   _id;
+  model:any={}
   edited:any;
   edit:string;
   constructor(private _FormserviceService : FormserviceService, private router:Router, private dashboard: DashBoardtableComponent) {
@@ -29,11 +30,11 @@ ngOnInit(){
 
   if(localStorage.getItem("edit") == "true")
     {
-    this.newfname=localStorage.getItem("fname")
-    this.newlname=localStorage.getItem("lname")
-    this.newaddress=localStorage.getItem("address")
-    this.newstate=localStorage.getItem("state")
-    this.newmobile=localStorage.getItem("mobile")
+    this.model.newfname=localStorage.getItem("fname")
+    this.model.newlname=localStorage.getItem("lname")
+    this.model.newaddress=localStorage.getItem("address")
+    this.model.newstate=localStorage.getItem("state")
+    this.model.newmobile=localStorage.getItem("mobile")
     this._id=localStorage.getItem("_id")
     }
   }
