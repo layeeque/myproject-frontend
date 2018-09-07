@@ -1,21 +1,24 @@
-<div class="container" >
+<div class="container">
     <div>{{msg}}
         <a [routerLink]="['/dashboard']">Click here to go to Login Page</a>
     </div>
-    <div class="card card-container ">
-            <h4 style="text-align: center;color: darkolivegreen;">Registration Form</h4>
-        <form >
-            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+    <!-- <div class="card card-container ">
+        <h4 style="text-align: center;color: darkolivegreen;">Registration Form</h4>
+        <form>
+
             <img id="profile-img" style="border-radius:50%;height:100px" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             />
             <p id="profile-name" class="profile-name-card"></p>
-            <!-- <form class="form-signin"> -->
-            <!-- <span id="reauth-email" class="reauth-email"></span> -->
-            <!-- <input type="text" id="inputid" class="form-control" placeholder="Id"  name="id" [(ngModel)]="id" [ngModelOptions]="{standalone: true}" autofocus> -->
-            <input type="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" id="inputEmail" class="form-control" placeholder="Email address" name="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required ><br/>
+            <input type="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" id="inputEmail" class="form-control"
+                placeholder="Email address" name="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required>
+            <br/>
 
-            <input type="password" id="inputPassword" class="form-control" [(ngModel)]="password" name="password" placeholder="Password" [ngModelOptions]="{standalone: true}" required><br/>
-            <input type="password" id="inputPassword" class="form-control" [(ngModel)]="cpassword" name="cpassword" placeholder="Confirm Password" [ngModelOptions]="{standalone: true}" required><br/>
+            <input type="password" id="inputPassword" class="form-control" [(ngModel)]="password" name="password" placeholder="Password"
+                [ngModelOptions]="{standalone: true}" required>
+            <br/>
+            <input type="password" id="inputPassword" class="form-control" [(ngModel)]="cpassword" name="cpassword" placeholder="Confirm Password"
+                [ngModelOptions]="{standalone: true}" required>
+            <br/>
 
 
             <div id="remember" class="checkbox">
@@ -24,10 +27,52 @@
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="register()" [disabled]="(!!email == false ) || (!!password == false) ||(!!cpassword == false) ||(password != cpassword)">Register</button>
-            <!-- </form> -->
-            <!-- /form -->
+
         </form>
-    </div>
-    <!-- /card-container -->
+    </div> -->
+
 </div>
-<!-- /container -->
+
+<div class="container">
+        <h3 style="text-align: center">{{message}}</h3>
+        <div class="row">
+            
+                <div class=" card card-container">
+                    <h4 style="text-align: center;color: darkolivegreen;">Registration Form</h4>
+                    <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+    
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" [(ngModel)]="model.email" #email="ngModel" [class.is-invalid]="f.submitted && email.invalid && email.touched"
+                                name="email" required email />
+                            <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                                <div *ngIf="email.errors.required">Email Name is required</div>
+                                <div *ngIf="email.errors.email">Email must be a valid email Address</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" [(ngModel)]="model.password" #password="ngModel" [class.is-invalid]=" password.invalid && password.touched"
+                                name="password" required />
+                            <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                                <div *ngIf="password.errors.required">Password Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <label for="password">Confirm Password</label>
+                                <input type="password" class="form-control" [(ngModel)]="model.cpassword" #cpassword="ngModel" [class.is-invalid]="(model.password != model.cpassword )"
+                                    name="cpassword" required />
+                                <div *ngIf="(model.password != model.cpassword ) || f.submitted  " class="invalid-feedback">
+                                    <div >Password and Confirm password are not same</div>
+        
+                                </div>
+                                
+                            </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary" >Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        
+    </div>

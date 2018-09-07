@@ -13,14 +13,14 @@ import { LocalStorageService, SessionStorageService, LocalStorage, SessionStorag
   providers: [LoginService]
 })
 export class LoginComponent implements OnInit{
-  shouldRun = false
-  tem: Object = {}
-  ename: string;
-  password: string;
-  returnUrl: string;
-  sub: any;
+  
+  // tem: Object = {}
+  // ename: string;
+  // password: string;
+  // returnUrl: string;
+  // sub: any;
   message:string
-
+ model:any={}
 
   constructor(private _loginService: LoginService, private router: Router, public afservice: ValidationService, public socialAuthService: AuthService,public session: SessionStorageService) {
           
@@ -34,8 +34,10 @@ ngOnInit(){
 }
 
   signIn() {
+    console.log("I am in sign in ")
+    console.log(this.model.email, this.model.password) 
 
-    var result = this._loginService.validateUser(this.ename, this.password).subscribe(
+    var result = this._loginService.validateUser(this.model.email, this.model.password).subscribe(
       result => {
         console.log("@@ "+JSON.stringify(result))
         if (result.success == 1) {
