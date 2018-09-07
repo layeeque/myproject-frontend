@@ -5,7 +5,7 @@
     <div>
       <h4 style="text-align: center">Edit Your Details</h4>
     </div>
-    <form name="form" (ngSubmit)="f.form.valid && editfunction()" #f="ngForm" novalidate>
+    <form name="form"   (ngSubmit)="f.form.valid && editfunction()" #f="ngForm" novalidate>
       <div>
         <div class="form-group">
           Task Name :
@@ -24,31 +24,33 @@
             Assignee Name is required
           </div>
         </div>
-
+{{model.newaddress}}{{model.newstate}}
         <div class="form-group">
           Assign - Date :
           <div class="form-control " style="padding-bottom: 10%">
             <mat-form-field>
-              <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="model.newaddress" name="newaddress">
+              <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="model.newaddress" #myDatepicker="ngModel" name="newaddress">
               <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
               <mat-datepicker #myDatepicker></mat-datepicker>
             </mat-form-field>
           </div>
           <div *ngIf="f.submitted || myDatepicker.invalid" class="invalid-feedback">
-              Assignee Date is required
-            </div>
+            Assignee Date is required
+          </div>
         </div>
-        {{myDatepicker.invalid}}
 
         <div class="form-group">
           Completion - Date :
           <div class="form-control " style="padding-bottom: 10%">
             <mat-form-field>
-              <input matInput [matDatepicker]="myDatepicker1" [(ngModel)]="model.newstate" name="newstate">
+              <input matInput [matDatepicker]="myDatepicker1" [(ngModel)]="model.newstate" #myDatepicker1="ngModel" name="newstate">
               <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
               <mat-datepicker #myDatepicker1></mat-datepicker>
             </mat-form-field>
           </div>
+          <div *ngIf="f.submitted || myDatepicker1.invalid" class="invalid-feedback">
+              Completion Date is required
+            </div>
         </div>
 
         <div class="form-group">

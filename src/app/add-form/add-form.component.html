@@ -8,13 +8,13 @@
   <div>
     <h4 style="text-align: center">Add Your Task Details</h4>
   </div>
-  <form name="form" (ngSubmit)="f.form.valid && add()" #f="ngForm" novalidate>
+  <form name="form" #ff="ngForm"  (ngSubmit)="ff.form.valid && add()" novalidate>
     <div>
       <div class="form-group">
         Task Name :
-        <input class="form-control " type="text" [(ngModel)]="model.newfname" #newfname="ngModel" [class.is-invalid]="f.submitted && newfname.invalid"
+        <input class="form-control " type="text" [(ngModel)]="model.newfname" #newfname="ngModel" [class.is-invalid]="ff.submitted && newfname.invalid"
           name="newfname" required>
-        <div *ngIf="f.submitted || newfname.invalid" class="invalid-feedback">
+        <div *ngIf="ff.submitted || newfname.invalid" class="invalid-feedback">
           Task Name is required
         </div>
       </div>
@@ -22,48 +22,47 @@
 
       <div class="form-group">
         Assignee :
-        <input class="form-control " type="text" [(ngModel)]="model.newlname" #newlname="ngModel" [class.is-invalid]="f.submitted && newlname.invalid "
+        <input class="form-control " type="text" [(ngModel)]="model.newlname" #newlname="ngModel" [class.is-invalid]="ff.submitted && newlname.invalid "
           name="newlname" required newlname>
-          <div *ngIf="f.submitted || newlname.invalid" class="invalid-feedback">
-              Assignee Name is required
+        <div *ngIf="ff.submitted || newlname.invalid" class="invalid-feedback">
+          Assignee Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+          Assign - Date :
+          <div class="form-control " style="padding-bottom: 10%">
+            <mat-form-field>
+              <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="model.newaddress" #myDatepicker="ngModel" name="newaddress">
+              <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+              <mat-datepicker #myDatepicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div *ngIf="ff.submitted || myDatepicker.invalid|| model.newaddress==''" class="invalid-feedback">
+            Assignee Date is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          Completion - Date :
+          <div class="form-control " style="padding-bottom: 10%">
+            <mat-form-field>
+              <input matInput [matDatepicker]="myDatepicker1" [(ngModel)]="model.newstate" #myDatepicker1="ngModel" name="newstate">
+              <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
+              <mat-datepicker #myDatepicker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div *ngIf="ff.submitted || myDatepicker1.invalid ||model.newstate==undefined" style="background-color: darkolivegreen" class="invalid-feedback">
+              Completion Date is required
             </div>
-      </div>
-
-      <div class="form-group">
-        Assign - Date :
-        <div class="form-control " style="padding-bottom: 10%">
-          <mat-form-field>
-            <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="model.newaddress" name="myDatepicker" [class.is-invalid]="f.submitted && myDatepicker.invalid ">
-            <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
-            <mat-datepicker #myDatepicker></mat-datepicker>
-          </mat-form-field>
         </div>
-        <div *ngIf="f.submitted || myDatepicker.invalid" class="invalid-feedback">
-            Assign - Date  is required
-          </div>
-      </div>
-
-      <div class="form-group">
-        Completion - Date :
-        <div class="form-control " style="padding-bottom: 10%">
-          <mat-form-field>
-            <input matInput [matDatepicker]="myDatepicker1" [(ngModel)]="model.newstate" name="newstate" [class.is-invalid]="f.submitted && newstate.invalid ">
-            <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
-            <mat-datepicker #myDatepicker1></mat-datepicker>
-          </mat-form-field>
-        </div>
-        <div *ngIf="f.submitted || newstate.invalid" class="invalid-feedback">
-            Completion - Date is required
-          </div>
-      </div>
-
       <div class="form-group">
         Task Details :
-        <input class="form-control " type="text" [(ngModel)]="model.newmobile" #newmobile="ngModel" [class.is-invalid]="f.submitted && newmobile.invalid "
+        <input class="form-control " type="text" [(ngModel)]="model.newmobile" #newmobile="ngModel" [class.is-invalid]="ff.submitted && newmobile.invalid"
           name="newmobile" required newmobile>
-          <div *ngIf="f.submitted || newmobile.invalid" class="invalid-feedback">
-              Task Details is required
-            </div>
+        <div *ngIf="ff.submitted || newmobile.invalid" class="invalid-feedback">
+          Task Details is required
+        </div>
       </div>
 
     </div>

@@ -11,13 +11,8 @@ import { DashBoardtableComponent } from "../dash-boardtable/dash-boardtable.comp
 
 })
 export class FormComponent implements OnInit  {
-  // @ViewChild (DashBoardtableComponent) _D;
-  newfname;
-  newlname;
-  newaddress;
-  newstate;
-  newmobile;
-  myDatepicker1;
+ 
+ 
   _id;
   model:any={}
   edited:any;
@@ -42,7 +37,8 @@ ngOnInit(){
  
   editfunction()
   {
-    this._FormserviceService.update(localStorage.getItem("_id"),this.newfname,this.newlname,this.newaddress.toString().slice(0, 15),this.newstate.toString().slice(0, 15),this.newmobile).subscribe(data =>{
+   
+    this._FormserviceService.update(localStorage.getItem("_id"),this.model.newfname,this.model.newlname,this.model.newaddress.toString().slice(0, 15),this.model.newstate.toString().slice(0, 15),this.model.newmobile).subscribe(data =>{
       console.log("data is "+ data)
      
       this.router.navigate(['dashboard']);
