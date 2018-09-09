@@ -33,7 +33,10 @@ export function getAuthServiceConfigs() {
       id: GoogleLoginProvider.PROVIDER_ID,
     	
        //provider: new GoogleLoginProvider("1092754136909-250693fpthv3bfdi9kot0mmln664icud.apps.googleusercontent.com")
-      provider: new GoogleLoginProvider("678776380629-23ps0ti9i6ufr3gtcdq8981kgh4jn49q.apps.googleusercontent.com")
+       //old
+      // provider: new GoogleLoginProvider("678776380629-23ps0ti9i6ufr3gtcdq8981kgh4jn49q.apps.googleusercontent.com")
+      //new 990126213949-0jjfhe7khbp75m4hbf196q9qojdd97s7.apps.googleusercontent.com
+      provider: new GoogleLoginProvider("990126213949-0jjfhe7khbp75m4hbf196q9qojdd97s7.apps.googleusercontent.com")
     }                                      	
   ]);
   return config;
