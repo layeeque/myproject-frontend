@@ -33,9 +33,9 @@
           Assign - Date :
           <div class="form-control " style="padding-bottom: 10%">
             <mat-form-field>
-              <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="model.newaddress" #myDatepicker="ngModel" name="newaddress" required>
-              <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
-              <mat-datepicker #myDatepicker></mat-datepicker>
+              <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="model.newaddress" #myDatepicker="ngModel" name="newaddress" [max]="model.newstate" readonly="readonly"  required >
+              <mat-datepicker-toggle matSuffix [for]="myDatepicker" ></mat-datepicker-toggle>
+              <mat-datepicker #myDatepicker ></mat-datepicker>
               <mat-error *ngIf="ff.submitted || myDatepicker.invalid" class="invalid-feedback">
                 Assignee Date is required
               </mat-error>
@@ -48,18 +48,15 @@
           Completion - Date :
           <div class="form-control " style="padding-bottom: 10%">
             <mat-form-field>
-              <input matInput #myDatepicker1 [matDatepicker]="myDatepicker1" [(ngModel)]="model.newstate"  #myDatepicker1="ngModel" name="newstate" required>
+              <input matInput #myDatepicker1 [matDatepicker]="myDatepicker1" [(ngModel)]="model.newstate" [min]="model.newaddress"  #myDatepicker1="ngModel" name="newstate" readonly="readonly" required>
               <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
               <mat-datepicker #myDatepicker1></mat-datepicker>
-              <mat-error *ngIf="ff.submitted || myDatepicker1.invalid" class="invalid-feedback">
+              <mat-error *ngIf="(ff.submitted || myDatepicker1.invalid)" class="invalid-feedback">
                 Completion Date is required
-              </mat-error>
-              <mat-error *ngIf='model.newaddress > model.newstate' class="invalid-feedback">
-                Completion Date should be greater than Assignee date
               </mat-error>
             </mat-form-field>
           </div>
-     qq {{( model.newaddress > model.newstate)}}   
+      
    
         </div>
       <div class="form-group">

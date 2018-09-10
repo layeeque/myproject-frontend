@@ -29,7 +29,7 @@
           Assign - Date :
           <div class="form-control " style="padding-bottom: 10%">
             <mat-form-field>
-              <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="model.newaddress" #myDatepicker="ngModel" name="newaddress" required>
+              <input matInput [matDatepicker]="myDatepicker" [(ngModel)]="model.newaddress" #myDatepicker="ngModel" name="newaddress" [max]="model.newstate" readonly="readonly" required>
               <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
               <mat-datepicker #myDatepicker></mat-datepicker>
               <mat-error *ngIf="f.submitted || myDatepicker.invalid" class="invalid-feedback">
@@ -44,7 +44,7 @@
           Completion - Date :
           <div class="form-control " style="padding-bottom: 10%">
             <mat-form-field>
-              <input matInput [matDatepicker]="myDatepicker1" [(ngModel)]="model.newstate" #myDatepicker1="ngModel" name="newstate" required>
+              <input matInput [matDatepicker]="myDatepicker1" [(ngModel)]="model.newstate" #myDatepicker1="ngModel" name="newstate" [min]="model.newaddress" readonly="readonly" required>
               <mat-datepicker-toggle matSuffix [for]="myDatepicker1"></mat-datepicker-toggle>
               <mat-datepicker #myDatepicker1></mat-datepicker>
               <mat-error *ngIf="f.submitted || myDatepicker1.invalid" class="invalid-feedback">

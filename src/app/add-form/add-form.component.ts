@@ -17,13 +17,18 @@ export class AddFormComponent implements OnInit {
   model:any={};
   constructor(private _AddformserviceService:AddformserviceService,private router:Router) { }
 
+ 
   ngOnInit() {
   }
 
+ 
+
   add(){
     
-    
-    this._AddformserviceService.add(this.model.newfname,this.model.newlname,this.model.newaddress.toString().slice(0, 15),this.model.newstate.toString().slice(0, 15),this.model.newmobile).subscribe(data =>{
+    console.log("%%"+this.model.newaddress.toUTCString())
+     this._AddformserviceService.add(this.model.newfname,this.model.newlname,this.model.newaddress.toString().slice(0, 15),this.model.newstate.toString().slice(0, 15),this.model.newmobile).subscribe(data =>{
+    //this._AddformserviceService.add(this.model.newfname,this.model.newlname,this.model.newaddress.toUTCString(),this.model.newstate.toUTCString(),this.model.newmobile).subscribe(data =>{
+     
       console.log("data is "+ data)
     
       this.router.navigate(['dashboard']);
