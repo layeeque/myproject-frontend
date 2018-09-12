@@ -36,8 +36,8 @@ const routes = [
             component: PasswordChangeComponent
         }]
     }
-    // ,
-    // { path: '**', component: LoginComponent }
+     ,
+     { path: '**', component: LoginComponent }
 
 ]
 
