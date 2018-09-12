@@ -9,6 +9,7 @@ import { DashBoardtableComponent } from "./dash-boardtable/dash-boardtable.compo
 import { AddFormComponent } from "./add-form/add-form.component";
 import { ForgetpasswordComponent } from "./forgetpassword/forgetpassword.component";
 import { AuthGuard } from "./auth.guard";
+import { PasswordChangeComponent } from "./password-change/password-change.component";
 
 
 const routes = [
@@ -29,9 +30,14 @@ const routes = [
         {
             path: 'editItem',
             component: FormComponent
+        },
+        {
+            path: 'changepassword',
+            component: PasswordChangeComponent
         }]
-    },
-    { path: '**', component: LoginComponent }
+    }
+    // ,
+    // { path: '**', component: LoginComponent }
 
 ]
 

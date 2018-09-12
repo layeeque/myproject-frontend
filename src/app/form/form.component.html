@@ -1,6 +1,7 @@
 <div class="container" style="width:40%;overflow: auto;max-height: 98%;" id="add">
   <button class="btn btn-primary btn-xs" data-title="add" [routerLink]="['/dashboard']">
-    Back to dashboard </button>&nbsp;&nbsp;
+    Back to dashboard </button>&nbsp;&nbsp; <button class="btn btn-primary btn-xs pull-right" data-title="add" (click)="clearAll()">
+     Clear All </button>
   <div>
     <div>
       <h4 style="text-align: center">Edit Your Details</h4>

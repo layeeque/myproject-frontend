@@ -34,6 +34,7 @@ export class DashBoardtableComponent implements OnInit {
 
     this.dashboardService.edit(id).subscribe(data1 => {
       console.log("from bkend " + JSON.stringify(data1))
+      console.log('##'+typeof new Date(data1.address))
       this._editedData = data1;
       this._edit = true;
       localStorage.setItem("edit", "true")

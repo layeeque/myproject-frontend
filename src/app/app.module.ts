@@ -22,6 +22,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { PasswordChangeComponent } from './password-change/password-change.component';
 
 
 
@@ -53,6 +54,7 @@ export function getAuthServiceConfigs() {
     AddFormComponent,
     SidenavComponent,
     ForgetpasswordComponent,
+    PasswordChangeComponent,
   
     
   

@@ -27,8 +27,8 @@ ngOnInit(){
     {
     this.model.newfname=localStorage.getItem("fname")
     this.model.newlname=localStorage.getItem("lname")
-    this.model.newaddress=localStorage.getItem("address")
-    this.model.newstate=localStorage.getItem("state")
+    this.model.newaddress=new Date (localStorage.getItem("address"))
+    this.model.newstate=new Date (localStorage.getItem("state"))
     this.model.newmobile=localStorage.getItem("mobile")
     this._id=localStorage.getItem("_id")
     }
@@ -43,6 +43,10 @@ ngOnInit(){
      
       this.router.navigate(['dashboard']);
     })
+  }
+
+  clearAll(){
+    this.model={}
   }
 
 }

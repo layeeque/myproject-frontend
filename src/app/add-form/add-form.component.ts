@@ -26,7 +26,7 @@ export class AddFormComponent implements OnInit {
   add(){
     
     console.log("%%"+this.model.newaddress.toUTCString())
-     this._AddformserviceService.add(this.model.newfname,this.model.newlname,this.model.newaddress.toString().slice(0, 15),this.model.newstate.toString().slice(0, 15),this.model.newmobile).subscribe(data =>{
+     this._AddformserviceService.add(this.model.newfname,this.model.newlname,this.model.newaddress.toLocaleDateString("en-US"),this.model.newstate.toLocaleDateString("en-US"),this.model.newmobile).subscribe(data =>{
     //this._AddformserviceService.add(this.model.newfname,this.model.newlname,this.model.newaddress.toUTCString(),this.model.newstate.toUTCString(),this.model.newmobile).subscribe(data =>{
      
       console.log("data is "+ data)
